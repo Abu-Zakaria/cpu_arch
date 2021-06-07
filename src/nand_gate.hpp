@@ -6,4 +6,4 @@ class NandGate : public Gate
 {
     public:
         bool get();
-}
+};
