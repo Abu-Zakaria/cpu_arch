@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     M m;
-    bool i = 1;
+    bool i = 0;
     bool s = 1;
 
     m.setI(i);
@@ -18,15 +18,6 @@ int main()
 
     cout << "Answer : " << result << "\n";
 
-    m.setS(0);
-
-    result = m.get();
-    cout << "Answer : " << result << "\n";
-
-    m.setI(0);
-
-    result = m.get();
-    cout << "Answer : " << result << "\n";
 
     return 0;
 }
