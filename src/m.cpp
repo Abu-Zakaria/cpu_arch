@@ -85,8 +85,6 @@ void M::update()
 
     // run the loop 2 times to get proper value
     perform_internal_wire_loop();
-    perform_internal_wire_loop();
-    perform_internal_wire_loop();
 };
 
 void M::perform_internal_wire_loop()
