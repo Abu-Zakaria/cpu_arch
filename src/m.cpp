@@ -2,6 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include "nand_gate.hpp"
 
 void M::setI(bool i)
 {
@@ -11,6 +12,8 @@ void M::setI(bool i)
 
     gate_1.setA(i);
     gate_1.setB(s);
+
+    a = gate_1.get();
 
     update();
 };
@@ -81,6 +84,7 @@ void M::update()
     b = gate_2.get();
 
     // run the loop 2 times to get proper value
+    perform_internal_wire_loop();
     perform_internal_wire_loop();
     perform_internal_wire_loop();
 };

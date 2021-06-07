@@ -1,14 +1,11 @@
 #pragma once
 
-#include "nand_gate.hpp"
-
 class M
 {
     private:
         bool i; // input
         bool s; // save state
     protected:
-        bool running = false;
         bool a, b, c, o;
 
         void update();
