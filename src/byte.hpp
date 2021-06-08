@@ -44,4 +44,4 @@ class Byte
         const char* get();
 
         void update();
-}
+};
