@@ -1,6 +1,7 @@
 #pragma once
 
 #include "m.hpp"
+#include <iostream>
 
 class Byte
 {
@@ -34,6 +35,7 @@ class Byte
         bool s; // save state
 
         const char boolToChar(bool value);
+        const char charToBool(char value);
 
     public:
         // @param const char* inputs - example "00101100"
@@ -41,7 +43,7 @@ class Byte
 
         void setS(bool s);
 
-        const char* get();
+        std::string get();
 
         void update();
 };

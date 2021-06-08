@@ -1,20 +1,24 @@
 #include "byte.hpp"
+#include <iostream>
 
 void Byte::setS(bool s)
 {
     this->s = s;
+    update();
 }
 
 void Byte::set(const char* inputs)
 {
-    i0 = inputs++;
-    i1 = inputs++;
-    i2 = inputs++;
-    i3 = inputs++;
-    i4 = inputs++;
-    i5 = inputs++;
-    i6 = inputs++;
-    i7 = inputs++;
+    i0 = charToBool(inputs[0]);
+    i1 = charToBool(inputs[1]);
+    i2 = charToBool(inputs[2]);
+    i3 = charToBool(inputs[3]);
+    i4 = charToBool(inputs[4]);
+    i5 = charToBool(inputs[5]);
+    i6 = charToBool(inputs[6]);
+    i7 = charToBool(inputs[7]);
+
+    update();
 }
 
 void Byte::update()
@@ -52,16 +56,17 @@ void Byte::update()
     o7 = m7.get();
 }
 
-const char* Byte::get()
+std::string Byte::get()
 {
-    int temp_o0 = boolToChar(o0);
-    int temp_o1 = boolToChar(o1);
-    int temp_o2 = boolToChar(o2);
-    int temp_o3 = boolToChar(o3);
-    int temp_o4 = boolToChar(o4);
-    int temp_o5 = boolToChar(o5);
-    int temp_o6 = boolToChar(o6);
-    int temp_o7 = boolToChar(o7);;
+    char temp_o0 = boolToChar(o0);
+    char temp_o1 = boolToChar(o1);
+    char temp_o2 = boolToChar(o2);
+    char temp_o3 = boolToChar(o3);
+    char temp_o4 = boolToChar(o4);
+    char temp_o5 = boolToChar(o5);
+    char temp_o6 = boolToChar(o6);
+    char temp_o7 = boolToChar(o7);
+
 
     const char result[] = {
         temp_o0,
@@ -71,12 +76,21 @@ const char* Byte::get()
         temp_o4,
         temp_o5,
         temp_o6,
-        temp_o7
+        temp_o7,
+        '\0'
     };
-    return result;
+
+    std::string result_str = result;
+
+    return result_str;
 }
 
 const char Byte::boolToChar(bool value)
 {
     return value ? '1' : '0';
+}
+
+const char Byte::charToBool(char value)
+{
+    return value == '1' ? true : false;
 }
