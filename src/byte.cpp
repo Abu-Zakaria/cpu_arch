@@ -90,7 +90,7 @@ const char Byte::boolToChar(bool value)
     return value ? '1' : '0';
 }
 
-const char Byte::charToBool(char value)
+bool Byte::charToBool(char value)
 {
     return value == '1' ? true : false;
 }

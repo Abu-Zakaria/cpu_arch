@@ -35,7 +35,7 @@ class Byte
         bool s; // save state
 
         const char boolToChar(bool value);
-        const char charToBool(char value);
+        bool charToBool(char value);
 
     public:
         // @param const char* inputs - example "00101100"
