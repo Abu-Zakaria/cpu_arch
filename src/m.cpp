@@ -38,8 +38,6 @@ void M::setS(bool s)
 
 bool M::get()
 {
-    std::cout << "i: " << i << ", s: " << s << "\n";
-
     return o;
 };
 
