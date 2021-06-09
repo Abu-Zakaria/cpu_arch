@@ -1,16 +1,21 @@
 #pragma once
 
 #include <string>
+#include "byte.hpp"
+#include "enabler.hpp"
 
-class Register
+class R
 {
     private:
         bool s;
         bool e;
-        std::string input;
+        std::string input = "00000000";
 
-        std::string byte_output;
-        std::string enabler_output;
+        std::string byte_output = "00000000";
+        std::string enabler_output = "00000000";
+
+        Byte byte;
+        Enabler enabler;
 
         void update();
     public:
