@@ -1,6 +1,7 @@
 default:
   image: gcc:latest
 
+
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
@@ -9,6 +10,7 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
+    - apt install -y cmake
     - cmake -B build
     - cd build && make
     - echo "Build complete."
