@@ -1,5 +1,5 @@
 default:
-  image: ubuntu:16.04
+  image: ubuntu:18.04
 
 
 stages:          # List of stages for jobs, and their order of execution
